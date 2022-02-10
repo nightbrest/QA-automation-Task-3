@@ -8,9 +8,7 @@ When(/^I click Drafts button$/, async () => {
 
 Then(/^I should see that email time of creation matches the RegExp pattern$/, async () => {
     const timeOfEmailCreation = await draftsPage.timeOfCreation.getText();
-    const regExpPattern = new RegExp('\\d{2}:\\d{2}');
-    const match = regExpPattern.test(timeOfEmailCreation);
-    expect(match).to.equal(true);
+    expect((new RegExp('\\d{2}:\\d{2}')).test(timeOfEmailCreation)).to.equal(true);
 });
 
 Then(/^I should see the created email on the top of the draft list$/, async () => {
