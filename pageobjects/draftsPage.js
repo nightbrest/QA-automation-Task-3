@@ -6,7 +6,7 @@ const selectors = {
     subjectValue:'//input[@data-test-id="compose-subject"]',
     draftedEmail:'//span[@title="vis_cesar@mail.ru"][1]',
     inputMessage:'//div[@data-test-id="rte"]',
-  
+    timeOfCreation: '//time[@role="gridcell"][1]'
 };
 
 class DraftsPage extends Page {
@@ -19,6 +19,8 @@ class DraftsPage extends Page {
     get subjectValue() { return $(selectors.subjectValue) };
 
     get draftedEmail() { return $(selectors.draftedEmail) };
+
+    get timeOfCreation() { return $(selectors.timeOfCreation) };
 
 };
 
