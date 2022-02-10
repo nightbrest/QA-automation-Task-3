@@ -1,6 +1,5 @@
 const { Given, When, Then } = require ('@wdio/cucumber-framework');
 const startPage = require('../pageobjects/startPage');
-const loginPage = require('../pageobjects/loginPage');
 const {expect} = require('chai');
 
 Given(/^I am on start mail page$/, async () => {
@@ -14,7 +13,7 @@ When(/^I click on "Sign in" button$/, async () => {
 });
 
 Then(/^I should see the yahoo mail login page with the login form$/, async () => {
-    await (loginPage.loginForm).waitForDisplayed({ timeout: 10000 });
-    expect (await (loginPage.loginForm).isDisplayed()).to.equal(true);
+    await (startPage.loginForm).waitForDisplayed({ timeout: 10000 });
+    expect (await (startPage.loginForm).isDisplayed()).to.equal(true);
 });
 
