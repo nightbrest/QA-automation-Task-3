@@ -1,6 +1,6 @@
 # QA-automation-Task-3
 Platform - Node.js
-Task: using WebdriverIO + Mocha.js + Chai.js + Cucunber frameworks + Xpath locators develop autotest with following bullet points:
+Task: using WebdriverIO + Mocha.js + Chai.js + Cucumber frameworks + Xpath locators + POM -  develop autotest with following bullet points:
 
 Use a public mail service (Mail.ru, Yandex.ru, Gmail.com and etc.) according to the test flow below:
 - Precondition: create an account for any mail services mentioned above (manually).
