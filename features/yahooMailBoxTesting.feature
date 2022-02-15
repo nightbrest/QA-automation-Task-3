@@ -24,7 +24,6 @@ Feature: Testing and verifying main fuctualities of yahoo mail service
 
   Scenario: 4. As a user, I can save created email in Drafts folder and verify it's content
     When I click Drafts button
-    
     Then I should see that email time of creation matches the RegExp pattern
     When I click on the email that is on the top of the draft list
     Then I should see that Address field is filled by 'vis_cesar@mail.ru'
