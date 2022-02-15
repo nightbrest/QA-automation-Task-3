@@ -7,6 +7,7 @@ When(/^I click Send Email button$/, async () => {
 });
 
 Then(/^I should see the draft email dissapeared from draft emails list$/, async () => {
+    browser.refresh();
     await sendPage.sentEmail.waitForDisplayed({ reverse: true });
     expect(await sendPage.sentEmail.isDisplayed()).to.equal(false);
 });

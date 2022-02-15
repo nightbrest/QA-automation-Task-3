@@ -10,19 +10,22 @@ Feature: Testing and verifying main fuctualities of yahoo mail service
     And I click Next button
     And I write 'suHGals126' in the Password field 
     And I click Submit button
-    Then I should see the authorised user yahoo mail service page 
+    Then I should see the authorised user yahoo mail service page with page title containing 'qaautomation07@yahoo.com'
   
   Scenario: 3. As a user, I can create new email
     When I click Compose button
     And I write 'vis_cesar@mail.ru' in the Address field 
     And I write 'Test subject' in the Subject field 
     And I write 'Hello, world! Hello, world! Hello, world!' in the Body field 
-    Then I should see that all fields of email are filled correct
+    Then I should see that Receiver field is filled with 'vis_cesar@mail.ru' 
+    And I should see that Subject field is filled with 'Test subject'
+    And I should see that Message field is filled with 'Hello, world! Hello, world! Hello, world!'
+    
 
   Scenario: 4. As a user, I can save created email in Drafts folder and verify it's content
     When I click Drafts button
-    Then I should see the created email on the top of the draft list
-    And I should see that email time of creation matches the RegExp pattern
+    
+    Then I should see that email time of creation matches the RegExp pattern
     When I click on the email that is on the top of the draft list
     Then I should see that Address field is filled by 'vis_cesar@mail.ru'
     And I should see that Subject field is filled by 'Test subject'

@@ -21,7 +21,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './features/**/*.feature'
+        './features/**/yahooMailBoxTesting.feature'
     ],
     // Patterns to exclude.
     exclude: [

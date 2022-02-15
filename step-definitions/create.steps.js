@@ -6,20 +6,26 @@ When(/^I click Compose button$/, async () => {
     await createPage.createMailButton.click();
 });
 
-When(/^I write 'vis_cesar@mail.ru' in the Address field$/, async () => {
-    await createPage.inputReceiver.setValue('vis_cesar@mail.ru');
+When(/^I write '(.*)' in the Address field$/, async (receiver) => {
+    await createPage.inputReceiver.setValue(receiver);
 });
 
-When(/^I write 'Test subject' in the Subject field$/, async () => {
-    await createPage.inputSubject.setValue('Test subject');
+When(/^I write '(.*)' in the Subject field$/, async (subject) => {
+    await createPage.inputSubject.setValue(subject);
 });
 
-When(/^I write 'Hello, world! Hello, world! Hello, world!' in the Body field$/, async () => {
-    await createPage.inputMessage.setValue('Hello, world! Hello, world! Hello, world!');
+When(/^I write '(.*)' in the Body field$/, async (message) => {
+    await createPage.inputMessage.setValue(message);
 });
 
-Then(/^I should see that all fields of email are filled correct$/, async () => {
-    expect(await (createPage.createdReceiver).getText()).to.include('vis_cesar@mail.ru');
-    expect(await (createPage.createdSubject).getAttribute('value')).to.contain('Test subject');
-    expect(await (createPage.createdMessage).getText()).to.contain('Hello, world! Hello, world! Hello, world!');
+Then(/^I should see that Receiver field is filled with '(.*)'$/, async (receiver) => {
+    expect(await (createPage.createdReceiver).getText()).to.include(receiver);
+});
+
+Then(/^I should see that Subject field is filled with '(.*)'$/, async (subject) => {
+    expect(await (createPage.createdSubject).getAttribute('value')).to.contain(subject);
+});
+
+Then(/^I should see that Message field is filled with '(.*)'$/, async (message) => {
+    expect(await (createPage.createdMessage).getText()).to.contain(message);
 });
